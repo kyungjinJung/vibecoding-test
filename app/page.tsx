@@ -1,12 +1,10 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans">
       <header className="bg-blue-600 text-white py-6">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">정경진 포트폴리오</h1>
-          <p className="text-xl mt-2">CEO @ 데이터방앗간 | No-code User Analytics '얼라이닉스(Alignix)'</p>
+          <p className="text-xl mt-2">CEO @ 데이터방앗간 | No-code User Analytics &apos;얼라이닉스(Alignix)&apos;</p>
         </div>
       </header>
 
@@ -43,7 +41,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4">경험</h2>
           <div className="mb-4">
             <h3 className="text-2xl font-semibold">데이터방앗간 - Co-founder and CEO (2024.12 - Present)</h3>
-            <p>No-code User Analytics '얼라이닉스(Alignix)' 서비스</p>
+            <p>No-code User Analytics &apos;얼라이닉스(Alignix)&apos; 서비스</p>
           </div>
           <div className="mb-4">
             <h3 className="text-2xl font-semibold">Antler Korea - Entrepreneur (2024.10 - 2024.12)</h3>
