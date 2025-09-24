@@ -1,14 +1,17 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b border-gray-800 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-lg font-mono">[kyung,jin,jung]</div>
+          <Link href="/" className="text-lg font-mono hover:text-blue-400 transition-colors">[kyung,jin,jung]</Link>
           <div className="hidden md:flex space-x-8 text-sm">
             <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
             <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
             <a href="#experience" className="hover:text-blue-400 transition-colors">Experience</a>
+            <Link href="/blog" className="hover:text-blue-400 transition-colors">Blog</Link>
             <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
           </div>
         </div>
