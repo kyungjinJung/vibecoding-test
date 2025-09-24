@@ -47,29 +47,46 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Tech Blog</h1>
-      <div className="grid gap-8">
-        {posts.map((post) => (
-          <article key={post.slug} className="border-b pb-8">
-            <h2 className="text-2xl font-bold mb-2">
-              <Link href={`/blog/${post.slug}`} className="hover:text-sky-500">
-                {post.frontmatter.title}
+    <div className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-4 py-12">
+        {/* Back to Home Button */}
+        <div className="mb-6">
+          <Link href="/" className="text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center">
+            ← Back to Home
+          </Link>
+        </div>
+        
+        <h1 className="text-4xl font-bold mb-8">Tech Blog</h1>
+        
+        <div className="grid gap-8">
+          {posts.map((post) => (
+            <article key={post.slug} className="border-b border-gray-700 pb-8">
+              <h2 className="text-2xl font-bold mb-2">
+                <Link href={`/blog/${post.slug}`} className="hover:text-blue-400 transition-colors">
+                  {post.frontmatter.title}
+                </Link>
+              </h2>
+              <p className="text-gray-400 mb-4">
+                {new Date(post.frontmatter.date).toLocaleDateString('ko-KR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </p>
+              <p className="text-lg text-gray-300">{post.frontmatter.summary}</p>
+              <Link href={`/blog/${post.slug}`} className="text-blue-400 hover:underline mt-4 inline-block">
+                Read more →
               </Link>
-            </h2>
-            <p className="text-gray-500 mb-4">
-              {new Date(post.frontmatter.date).toLocaleDateString('ko-KR', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </p>
-            <p className="text-lg text-gray-700">{post.frontmatter.summary}</p>
-            <Link href={`/blog/${post.slug}`} className="text-sky-600 hover:underline mt-4 inline-block">
-              Read more →
-            </Link>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
+
+        {/* Bottom navigation */}
+        <div className="mt-12 pt-8 border-t border-gray-700">
+          <Link href="/" className="text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center">
+            ← Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
